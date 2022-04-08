@@ -144,6 +144,51 @@
 
     var_dump($arr_num);
     ?>
+
+    <!-- Snack 5
+    Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo. -->
+
+    <h1>SNACK 5</h1>
+
+    <?php
+
+    $testo = "Roma Roma Roma,
+    core de stà città,
+    unico grande amore,
+    de tanta e tanta gente,
+    che fai sospirà.
+    Roma Roma Roma,
+    lassace cantà,
+    da stà voce nasce un core,
+    so centomila voci che hai fatto nammorà.
+    Roma Roma bella,
+    t'ho dipinta io,
+    gialla come er sole,
+    rossa come er core mio.
+    
+    Roma Roma mia,
+    nun te fa cantà,
+    tu sei nata grande
+    e grande hai da restà.
+    
+    Roma Roma Roma,
+    core de stà città,
+    unico grande amore,
+    de tanta e tanta gente,
+    ch'hai fatto nammorà.";
+
+    $array_parag = explode('.', $testo);
+
+    var_dump($array_parag);
+
+    ?>
+
+    <div><?= $testo ?></div>
+
+    <?php for ($index = 0; $index < count($array_parag); $index++) { ?>
+        <h6><?= $array_parag[$index] ?></h6> <?php
+                                            }
+                                                ?>
 </body>
 
 </html>
