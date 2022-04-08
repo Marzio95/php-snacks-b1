@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <!-- SNACK 1 -->
+    <h1>snack 1</h1>
     <ul>
         <?php
         $array_partite = [
@@ -80,6 +82,50 @@
         <?php }
         ?>
     </ul>
+
+
+    <!-- SNACK 2 -->
+    <!-- Passare come parametri GET name, mail e age e verificare cercando i metodi che non conosciamo nella documentazione che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
+
+    <h1>snack 2</h1>
+
+    <form action="" method="get">
+
+        <label for="name">NAME</label>
+        <input type="text" id="name">
+
+        <label for="email">EMAIL</label>
+        <input type="text" id="email">
+
+        <label for="age">AGE</label>
+        <input type="text" id="age">
+
+        <button>Verifica</button>
+    </form>
+
+
+    <!-- SNACK 4 -->
+    <!-- Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+    <h1>snack 4</h1>
+
+    <?php
+    $num_rand = rand(1, 50);
+    $arr_num = [];
+
+    while (count($arr_num) < 15) {
+
+        $num_rand = rand(1, 50);
+
+        if (!in_array($num_rand, $arr_num)) {
+            $arr_num[] = $num_rand; ?>
+
+            <span><?= $num_rand ?> - </span>
+    <?php
+        }
+    }
+
+    var_dump($arr_num);
+    ?>
 </body>
 
 </html>
