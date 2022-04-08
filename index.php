@@ -89,16 +89,34 @@
 
     <h1>snack 2</h1>
 
+    <?php
+
+    if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['age'])) {
+        $name = $_GET['name'];
+        $email = $_GET['email'];
+        $age = $_GET['age'];
+    }
+
+    if (strlen($name) > 3 && strpos($email, '@') && strpos($email, '.') && is_numeric($age)) { ?>
+        <h4>Accesso Riuscito</h4>
+    <?php
+    } else { ?>
+        <h4>Accesso Negato</h4>
+    <?php
+    }
+
+    ?>
+
     <form action="" method="get">
 
         <label for="name">NAME</label>
-        <input type="text" id="name">
+        <input type="text" name="name" id="name">
 
         <label for="email">EMAIL</label>
-        <input type="text" id="email">
+        <input type="text" name="email" id="email">
 
         <label for="age">AGE</label>
-        <input type="text" id="age">
+        <input type="text" name="age" id="age">
 
         <button>Verifica</button>
     </form>
